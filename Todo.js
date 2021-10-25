@@ -1,6 +1,8 @@
 add = document.getElementById("add");
 add.addEventListener("click", GetAndUpdate);
 update();
+
+// ---------------------------Fuction1 Getandupdate----------------------------------------
 function GetAndUpdate() {
   til = document.getElementById("titel").value;
   desc = document.getElementById("description").value;
@@ -16,6 +18,8 @@ function GetAndUpdate() {
   }
   update();
 }
+// ----------------------------Function2 Update---------------------------------------------
+
 function update() {
   if (localStorage.getItem("itemsJson") == null) {
     itemJsonArray = [];
@@ -40,6 +44,8 @@ function update() {
   tabelbody.innerHTML = str;
 }
 
+// -------------------------------Function3 Delete---------------------------------------
+
 function deleted(itemindex) {
   console.log("Delete", itemindex);
   itemJsonArraystr = localStorage.getItem("itemsJson");
@@ -49,3 +55,4 @@ function deleted(itemindex) {
   localStorage.setItem("itemsJson", JSON.stringify(itemJsonArray));
   update();
 }
+// ---------------------------------------***************--------------------------------
